@@ -29,7 +29,7 @@ function index(req, res) {
                       <div class="p-2">
                         <h3>${post.title}</h3>
                         <p>${post.content}</p>
-                        <p># ${post.tags.join(', ')}</p>
+                        <p># ${post.tags}</p>
                         <a href="/posts/${post.slug}" class="button">Leggi post</a>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ function store(req, res) {
 function destroy(req, res) {
 
   const posts = JSON.parse(fs.readFileSync(path.resolve("./db/db.json"), "utf8"));
-  
+
   res.format({
     html: () => {
       res.redirect("/");

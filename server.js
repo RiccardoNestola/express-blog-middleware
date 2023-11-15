@@ -1,7 +1,7 @@
 /* Esercizio
 
-Impariamo ad utilizzare i middleware e quindi gestiamo gli errori e le pagine 404.
-Questi middleware dovranno rispondere con un json contente il codice ed il messaggio dell’errore.
+-Impariamo ad utilizzare i middleware e quindi gestiamo gli errori e le pagine 404.
+-Questi middleware dovranno rispondere con un json contente il codice ed il messaggio dell’errore.
 
 Creiamo le seguenti rotte:
 home
@@ -18,6 +18,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const homeController = require("./controllers/home");
 const postsRouter = require("./routers/posts");
+const errorsMiddleware = require("./middlewares/errors");
+const errorsRouteMiddleware = require("./middlewares/errorsRoute");
 
 dotenv.config();
 
@@ -39,6 +41,11 @@ app.get("/about", homeController.about);
 app.get("/contatti", homeController.contacts);
 
 app.use("/posts", postsRouter)
+
+
+// Gestiamo gli errori
+app.use(errorsRouteMiddleware);
+app.use(errorsMiddleware);
 
 
 // Avviamo il server

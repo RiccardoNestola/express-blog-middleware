@@ -8,6 +8,7 @@ const path = require("path");
  */
 function index (req, res) {
 
+
   res.format({
     html: () => {
       let htmlContent = fs.readFileSync(path.resolve(__dirname, "../pages/index.html"), "utf-8");
