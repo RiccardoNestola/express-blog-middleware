@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@head
+
+<body>
+  
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="/">
+          <strong>BLOG</strong>
+        </a>
+        <ul class="header__menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Blog</a></li>
+          <li><a href="/about">Chi Sono</a></li>
+        </ul>
+        <div class="header__quick">
+          <a href="/contatti">Contatti</a>
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+  <!-- <h1 class="text-center p-4">Benvenuto nel mio blog!</h1> -->
+
+  
+    
+      <div class="cover mt-4" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random');">
+        <div class="cover__content">
+          <h1>Benvenuto nel mio blog!</h1>
+          <a href="/posts" class="button">Vai Al Blog</a>
+        </div>
+      </div>
+    
+  
+
+
+
+  <script>
+      let item = document.querySelector('.icon-hamburger');
+      item.addEventListener("click", function() {
+            document.body.classList.toggle('menu-open');
+      });
+    </script>
+</body>
+</html>

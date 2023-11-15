@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@head
+
+<body>
+  <header>
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="/">
+          <strong>BLOG</strong>
+        </a>
+        <ul class="header__menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Blog</a></li>
+          <li><a href="/about">Chi Sono</a></li>
+        </ul>
+        <div class="header__quick">
+          <a href="/contatti">Contatti</a>
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script>
+      let item = document.querySelector('.icon-hamburger');
+      item.addEventListener("click", function() {
+            document.body.classList.toggle('menu-open');
+      });
+    </script>
+  </header>
+
+  <h1 class="text-center p-4">Ecco i miei post</h1>
+
+  <div class="container">
+
+    <div class="grid">
+        @posts
+    </div>
+  </div>
+      
+  
+
+
+</body>
+</html>
