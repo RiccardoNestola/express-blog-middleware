@@ -4,17 +4,10 @@ const path = require("path");
 
 module.exports = function (err, req, res, next) {
 
-
-    if (req.file) {
-        fs.unlinkSync(req.file.path);
-    }
-
     res.format({
         json: () => {
             res.status(404).json({
-                message: "Errore sconosciuto",
-                error: err.message,
-                errorInstance: err.name,
+                message: "Pagina non trovata",
             });
         },
         html: () => {

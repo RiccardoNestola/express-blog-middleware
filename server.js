@@ -18,6 +18,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const homeController = require("./controllers/home");
 const postsRouter = require("./routers/posts");
+const adminRouter = require("./routers/admin");
+const authRouter = require("./routers/auth");
+
+
 const errorsMiddleware = require("./middlewares/errors");
 const errorsRouteMiddleware = require("./middlewares/errorsRoute");
 
@@ -41,6 +45,10 @@ app.get("/about", homeController.about);
 app.get("/contatti", homeController.contacts);
 
 app.use("/posts", postsRouter)
+
+app.use("/admin", adminRouter)
+
+app.use("/", authRouter)
 
 
 // Gestiamo gli errori

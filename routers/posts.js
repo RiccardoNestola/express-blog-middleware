@@ -19,6 +19,9 @@ router.post("/", multer({ dest: "public/imgs/posts" }).single("image"), postsCon
 // download
 router.get('/:slug/download', postsController.download);
 
+// delete
+router.delete("/:slug", postsController.destroy)
+
 /* 
 router.post('/', postsController.store); */
 
